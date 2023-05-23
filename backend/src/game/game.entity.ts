@@ -16,5 +16,5 @@ export class Game extends BaseEntity{
 	player1_score:number;
 
 	@Column({type: 'integer', nullable: false})
-	player2_score:number;
+	player2_scoreb:number;
 }

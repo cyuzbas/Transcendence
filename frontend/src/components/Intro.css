@@ -16,7 +16,7 @@ pointer-events: none;
 
 .App-header {
 /* background-color: #282c34; */
-background-color: rgb(102, 169, 205);
+background-color: rgb(162, 212, 238);
 min-height: 100vh;
 display: flex;
 flex-direction: column;
@@ -28,6 +28,7 @@ color: white;
 
 button {
 	background-color: blanchedalmond;
+	cursor: pointer;
 	padding: 15px;
 	font-size: medium;
 	font-weight: bold;
@@ -44,14 +45,23 @@ button {
 	padding-right: 8px;
 }
 
-.Email {
-	display: flex;
+.Signup {
+	text-decoration: underline;
+	cursor: pointer;
+	color: black;
+	font-size: 20px;
 }
 
-#Email-Login {
-	margin-right: 20px;
+.Sign-input {
+	display: grid;
+	gap: 15px;
 }
 
-#Email-Register {
-	margin-left: 20px;
+.Signup-input {
+	width: 190px;
+	height: 30px;
+}
+
+.Error-message {
+	color: black;
 }

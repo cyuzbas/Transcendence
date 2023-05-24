@@ -1,4 +1,4 @@
-import { Controller , Post, Body } from '@nestjs/common';
+import { Controller , Post, Body, Get, Param } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
@@ -15,4 +15,5 @@ export class UserController {
         const resp = await this.userService.createOne(createUserRequest)
         return resp;
     }
+
 }

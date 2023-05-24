@@ -1,13 +1,21 @@
+import React from 'react';
+import { BrowserRouter, Router, Route, Routes} from 'react-router-dom';
 import Login from './components/Login';
-// import logo from './logo.svg';
-// import pong from './img/pong.png';
-// import github from './img/github.png';
-// import fourtytwo from './img/ft.png';
-// import './App.css';
+import Intro from './components/Intro';
+
+
 
 function App() {
   return (
-    <Login/>
+    <Intro/>
+    // <Login/>
+    // <div className='App'>
+    //   <BrowserRouter>
+    //     <Routes>
+    //       <Route path='/login' element={<Login />} />
+    //     </Routes>
+    //   </BrowserRouter>
+    // </div>
   );
 }
 

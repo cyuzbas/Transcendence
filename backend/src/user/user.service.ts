@@ -10,6 +10,14 @@ export class UserService {
     constructor(@InjectRepository(User) private UserRepository: Repository<User>){}
 
     public async createOne(createUserRequest: CreateUserDTO){
+        const existingUser = await this.UserRepository.findOne({ where: { user_name: createUserRequest.user_name } });
+
+        if (existingUser) {
+            // Kullanıcı zaten mevcut, gerekli işlemler yapılabilir
+            // Örneğin, bir hata fırlatılabilir veya uygun bir mesaj döndürülebilir
+            throw new Error('User already exists!');
+        }
+
         const user: User = new User();
         user.user_id = createUserRequest.user_id;
         user.password = createUserRequest.password;
@@ -26,4 +34,5 @@ export class UserService {
 
         return userDTO;
     }
+
 }

@@ -9,6 +9,7 @@ import fourtytwo from '../img/ft.png';
 const Login = () => {
 	const [showInputs, setShowInputs] = useState(false);
 	const [showExistingError, setShowExistingError] = useState(false);
+	const [showSuccessAdded, setShowSuccessAdded] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	// const [re-password, setRePassword] = useState('');
@@ -16,6 +17,11 @@ const Login = () => {
 
 	const handleSignupText= () => {
 		setShowInputs(true);
+	};
+
+	const handleInput= () => {
+		setShowSuccessAdded(false);
+		setShowExistingError(false);
 	};
 
 	const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +46,7 @@ const Login = () => {
 			};
 			const response = await axios.post('http://localhost:3001/users/', data, options);
 			setResponse(response.data);
+			setShowSuccessAdded(true);
 		} catch (error) {
 			console.error('POST request error:', error);
 				setShowExistingError(true);
@@ -69,15 +76,22 @@ const Login = () => {
 
 			{showInputs && (
 			<div className='Sign-input'>
-				<input className='Signup-input' id="email" type="email" placeholder="* Email" value={email} onChange={handleChangeEmail}/>
+				<input className='Signup-input' id="email" type="email" placeholder="* Email" value={email} onChange={handleChangeEmail} onInput={handleInput}/>
 				<input className='Signup-input' id="password" type="password" placeholder="* Password" value={password} onChange={handleChangePassword}/>
 				{/* <input className='Signup-input' id="re-password" type="password" placeholder="Repeat Password" onChange={handleChangeRePassword}/> */}
 				<button className='Signup-button' onClick={handleSignupButton}>Sign Up</button>
 			</div>
-     		 )}
-			{showExistingError && (
+     		)}
+			
+			{showSuccessAdded && (
 			<div className='Sign-error'>
-				<p className='Error-message'>*Looks like this user already exists!</p>
+				<p className='message'>*User successfully added!</p>
+			</div>
+      		)}
+
+			{showExistingError && (
+			<div className='Sign-success'>
+				<p className='message'>*Looks like this user already exists!</p>
 			</div>
       		)}
 		</header>

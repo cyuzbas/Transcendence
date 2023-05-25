@@ -1,0 +1,37 @@
+.PageMain {  display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	gap: 10px;
+	grid-auto-flow: row;
+	grid-template-areas:
+	  "Menu AllRanks AllRanks AllRanks FriendSection FriendSection"
+	  "ProfileInfo AllRanks AllRanks AllRanks FriendSection FriendSection"
+	  "MyRank AllRanks AllRanks AllRanks FriendSection FriendSection"
+	  "Chat Chat Chat Chat FriendSection FriendSection"
+	  "Chat Chat Chat Chat FriendSection FriendSection";
+  }
+  
+  .Menu { grid-area: Menu;
+background-color: blue; }
+  
+  .ProfileInfo { grid-area: ProfileInfo;
+background-color: yellow; }
+  
+  .MyRank { grid-area: MyRank; 
+background-color: blueviolet;}
+  
+  .Chat { grid-area: Chat; 
+background-color: aquamarine;}
+  
+  .AllRanks { grid-area: AllRanks; 
+background-color: palevioletred;}
+  
+  .FriendSection { grid-area: FriendSection;
+background-color: chocolate; }
+  
+.friend {
+	background-color: bisque;
+	margin: 30px;
+	height: 100px;
+}

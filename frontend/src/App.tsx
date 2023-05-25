@@ -1,14 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Router, Route, Routes} from 'react-router-dom';
-import Login from './components/Login';
-import Intro from './components/Intro';
+// import { BrowserRouter, Router, Route, Routes} from 'react-router-dom';
+// import Intro from './components/Intro';
+import AddFriend from './components/AddFriend';
 
 
 
 function App() {
   return (
-    <Intro/>
-    // <Login/>
+    <AddFriend/>
+    // <Intro/>
     // <div className='App'>
     //   <BrowserRouter>
     //     <Routes>

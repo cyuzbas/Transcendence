@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Intro.css';
-import logo from '../logo.svg';
 import pong from '../img/pong.png';
 import github from '../img/github.png';
 import fourtytwo from '../img/ft.png';
@@ -12,7 +11,6 @@ const Login = () => {
 	const [showSuccessAdded, setShowSuccessAdded] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	// const [re-password, setRePassword] = useState('');
 	const [response, setResponse] = useState('');
 
 	const handleSignupText= () => {
@@ -37,6 +35,7 @@ const Login = () => {
 	const handleSignupButton = async ()  => {
 		console.log('Email:', email);
 		console.log('Password:', password);
+		console.log('Rspns:', response);
 		try {
 			const data = { is_online: 'true', password: password, user_name: email };
 			const options = {
@@ -61,11 +60,10 @@ const Login = () => {
 			<img src={pong} className="App-logo" alt="logo" />
 			<br/>
 
-			<button className='Login-button'><text className='icon-text'>Login with</text>
-			<img src={fourtytwo} alt="Ft-icon" className='icon'/></button>
+			<button className='Login-button'>Login with<img src={fourtytwo} alt="Ft-icon" className='icon'/></button>
 			<br/>
 
-			<button className='Login-button'><text className='icon-text'>Login with Github</text>
+			<button className='Login-button'>Login with Github
 			<img src={github} alt="git-icon" className='icon'/></button>
 			<br/>
 
@@ -78,7 +76,6 @@ const Login = () => {
 			<div className='Sign-input'>
 				<input className='Signup-input' id="email" type="email" placeholder="* Email" value={email} onChange={handleChangeEmail} onInput={handleInput}/>
 				<input className='Signup-input' id="password" type="password" placeholder="* Password" value={password} onChange={handleChangePassword}/>
-				{/* <input className='Signup-input' id="re-password" type="password" placeholder="Repeat Password" onChange={handleChangeRePassword}/> */}
 				<button className='Signup-button' onClick={handleSignupButton}>Sign Up</button>
 			</div>
      		)}
